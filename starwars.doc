@@ -1,0 +1,62 @@
+Part 1: SWAPI
+
+1. To get the height of Darth Vader:
+https://swapi.dev/api/people/4/
+
+
+2. To get the population of the planet Alderaan:
+https://swapi.dev/api/planets/2/
+
+3. To get the name of the manufacturer of the Millennium Falcon:
+https://swapi.dev/api/starships/10/
+
+4. To get the name of the species that C-3PO belongs to (multiple URLs):
+https://swapi.dev/api/people/2/
+
+5. To get the title of each film that Obi-Wan Kenobi is in (multiple URLs):
+https://swapi.dev/api/people/10/
+
+6. To get the information about the Millennium Falcon using a search query (starship type):
+https://swapi.dev/api/starships/?search=Millennium%20Falcon
+
+
+-----------------------------------------------------------------------------
+Part 2: Social Mountain
+
+The base URL of your requests is: https://practiceapi.devmountain.com/api (make sure to have the “s” in “https”)
+
+
+1. Check if the POST request accept params, queries, and/or a body. Which one(s) and what information is it expecting to be sent?
+The POST request does not explicitly mention accepting params or queries in the documentation. However, it expects a body to be sent containing the necessary information for creating a new post.
+
+2. What data type does the GET request return?
+The GET request returns a data type that is likely a JSON object or array, as this is the standard data format for API responses.
+
+3. What would the URL look like for deleting the post with the id 555? (This post does not exist anymore, but the syntax is the same for existing posts, )
+The URL for deleting the post with id 555 would look like: https://practiceapi.devmountain.com/api/posts/555 (Assuming that this syntax applies to existing posts.)
+
+4. List the possible response codes from the GET request at ‘/posts/filter’
+Possible response codes could include 200 (OK) for successful retrieval of filtered posts, 400 (Bad Request) for an invalid request, and 404 (Not Found) if the requested resource is not found.
+
+5. Create a post whose text is your name, record the URL and body here:
+To create a post with the text "Your name":
+URL: POST https://practiceapi.devmountain.com/api/posts
+Body: { "text": "Your name" }
+
+6. What would the URL and body object be to update the post you just made to contain your faovrite color instead of your name?
+To update the post I just made to contain the text "Your favorite color" instead of my name:
+URL: PUT https://practiceapi.devmountain.com/api/posts/<post_id>
+(Replace <post_id> with the actual ID of the post I just created.)
+Body: { "text": "Your favorite color" }
+
+7. What is the URL to get posts that contain the text “blue”?
+The URL to get posts that contain the text “blue” is: GET https://practiceapi.devmountain.com/api/posts?search=blue
+
+8. Make a request to GET all the posts. What are the content type and charset of the response? (Hint: look on the Headers)
+When making a request to GET all the posts, the Content-Type of the response would likely be application/json, and the Charset would likely be utf-8 or similar.
+
+9. What would cause a PUT request to return a 409 status?
+A PUT request might return a 409 status if there is a conflict with the request, typically when the resource being updated is in a state that cannot be changed due to a conflict with the current state of the server.
+
+What happens if you try to send a query in the GET request URL? Why do you get that response?
+If I try to send a query in the GET request URL, such as GET https://practiceapi.devmountain.com/api/posts?param=value, I might get a response that the query parameter is not supported or an empty response, depending on the API implementation. This is because the API might not have an endpoint that handles the specific query parameter provided.
